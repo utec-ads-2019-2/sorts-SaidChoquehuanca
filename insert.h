@@ -8,7 +8,15 @@ class InsertSort : public Sort {
         InsertSort(int *elements, size_t size) : Sort(elements, size) {}
 
         void execute() {
-            // TODO
+            for(int i=0;i<size;i++){
+                int chain=elements[i];
+                int j=i-1;
+                while(j>=0 and elements[j]>chain){
+                    elements[j+1]=elements[j];
+                    j=j-1;
+                }
+                elements[j+1]=chain;
+            }
         }
 
         inline string name() { return "InsertSort"; }

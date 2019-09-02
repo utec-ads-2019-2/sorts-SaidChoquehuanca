@@ -8,6 +8,15 @@ class SelectSort : public Sort {
         SelectSort(int *elements, size_t size) : Sort(elements, size) {}
 
         void execute() {
+            for(int i=0;i<size-1;i++){
+                int minimo=i;
+                for(int j=i+1;j<size;j++){
+                    if(elements[j]<elements[minimo]){
+                        minimo=j;}}
+                    int temp = elements[minimo];
+                    elements[minimo]= elements[i];
+                    elements[i]=temp;
+            }
             // TODO
         }
 
